@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MeloGo — Ügyfélszolgálat / Support</title>
+  <meta name="description" content="Ügyfélszolgálat és segítség a MeloGo alkalmazással kapcsolatban." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to bottom, #04040A 0%, #050918 50%, #060D22 100%);
+      color: #ffffff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 600px;
+      text-align: center;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 24px;
+      padding: 48px 32px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+      backdrop-filter: blur(10px);
+    }
+
+    .logo {
+      width: 100px;
+      height: auto;
+      border-radius: 20px;
+      margin-bottom: 32px;
+      filter: drop-shadow(0 10px 30px rgba(179,255,0,0.15));
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 400;
+      letter-spacing: -0.5px;
+      margin-bottom: 24px;
+      color: #ffffff;
+    }
+
+    p {
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 32px;
+    }
+
+    .email-link {
+      display: inline-block;
+      background: rgba(179,255,0,0.1);
+      border: 1px solid rgba(179,255,0,0.4);
+      color: #b3ff00;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+
+    .email-link:hover {
+      background: rgba(179,255,0,0.2);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(179,255,0,0.15);
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 40px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .back-link:hover {
+      color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <img src="logo.jpg" alt="MeloGo" class="logo" />
+    <h1>Ügyfélszolgálat / Support</h1>
+    <p>Kérdése van, vagy segítségre van szüksége a MeloGo alkalmazással kapcsolatban? Lépjen velünk kapcsolatba a <strong>zsomborkerekes09@gmail.com</strong> e-mail címen, és ügyfélszolgálatunk hamarosan válaszol!</p>
+    
+    <a href="mailto:zsomborkerekes09@gmail.com" class="email-link">Email küldése</a>
+
+    <br>
+    <a href="index.html" class="back-link">← Vissza a főoldalra</a>
+  </div>
+
+</body>
+</html>
