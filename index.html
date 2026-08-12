@@ -13,7 +13,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet" />
 
   <style>
     *, *::before, *::after {
@@ -111,7 +111,7 @@
 
     .hero-title {
       font-size: clamp(44px, 8vw, 72px);
-      font-weight: 700;
+      font-weight: 200;
       /* Tight letter spacing for premium structured look */
       letter-spacing: -0.04em;
       line-height: 1.05;
@@ -128,7 +128,7 @@
 
     .hero-subtitle {
       font-size: clamp(18px, 4vw, 22px);
-      font-weight: 400;
+      font-weight: 300;
       color: #EBEBF5;
       opacity: 0.8;
       max-width: 600px;
@@ -346,7 +346,15 @@
         </a>
         <!-- Official Google Play badge -->
         <a href="https://play.google.com/store/apps/details?id=com.melogo.app&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" class="badge-link" aria-label="Letöltés Google Play-ről">
-          <img src="https://play.google.com/intl/en_us/badges/static/images/badges/hu_badge_web_generic.png" alt="Szerezd meg a Google Play-en" style="height:78px; margin-top:-12px;" />
+          <svg xmlns="http://www.w3.org/2000/svg" width="162" height="54" viewBox="0 0 162 54" aria-label="Szerezd be a Google Play-en">
+            <rect width="160" height="52" x="1" y="1" rx="9" fill="#000" stroke="#878787" stroke-width="1"/>
+            <path d="M22.8 15.3c-.3.3-.5.9-.5 1.7v19.9c0 .8.2 1.4.5 1.7l.1.1 11.2-11.2v-.2l-11.2-11.2-.1-.1z" fill="#00a6ff"/>
+            <path d="M37.8 30.3l-3.7-3.7v-.2l3.7-3.7 1.2.7 3.5 2c1 .6 1 1.5 0 2l-3.5 2-1.2.7z" fill="#ffc100"/>
+            <path d="M34.1 26.4l-11.3 11.3c.4.4 1 .4 1.7 0l13.1-7.5-3.5-3.8z" fill="#ff3333"/>
+            <path d="M34.1 26.6l3.5-3.8-13.1-7.5c-.7-.4-1.3-.3-1.7 0l11.3 11.3z" fill="#00e676"/>
+            <text x="54" y="22" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10.5" fill="rgba(255,255,255,0.8)" letter-spacing="0.2">SZEREZD BE:</text>
+            <text x="53" y="39" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="19" font-weight="500" fill="#fff" letter-spacing="-0.3">Google Play</text>
+          </svg>
         </a>
       </div>
     </section>
