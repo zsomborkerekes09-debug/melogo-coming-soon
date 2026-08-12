@@ -27,7 +27,8 @@
       min-height: 100vh;
       background-color: #1C1C1E;
       color: #FFFFFF;
-      font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      /* Only clean, modern, evenly weighted sans-serif fonts */
+      font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'SF Pro Text', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       display: flex;
@@ -55,7 +56,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 64px;
+      margin-bottom: 72px;
     }
 
     .nav-logo {
@@ -81,7 +82,7 @@
     /* ── Hero ── */
     .hero {
       text-align: center;
-      margin-bottom: 64px;
+      margin-bottom: 72px;
     }
 
     .badge {
@@ -95,8 +96,9 @@
       font-weight: 600;
       padding: 6px 16px;
       border-radius: 100px; /* Capsule */
-      margin-bottom: 24px;
-      letter-spacing: 0.3px;
+      margin-bottom: 32px;
+      letter-spacing: 0.2px;
+      text-transform: uppercase;
     }
 
     .badge-dot {
@@ -108,14 +110,16 @@
     }
 
     .hero-title {
-      font-size: clamp(40px, 8vw, 64px);
+      font-size: clamp(44px, 8vw, 72px);
       font-weight: 700;
-      letter-spacing: -2px;
-      line-height: 1.1;
+      /* Tight letter spacing for premium structured look */
+      letter-spacing: -0.04em;
+      line-height: 1.05;
       margin-bottom: 24px;
       max-width: 800px;
       margin-left: auto;
       margin-right: auto;
+      color: #FFFFFF;
     }
 
     .hero-title span {
@@ -123,13 +127,14 @@
     }
 
     .hero-subtitle {
-      font-size: clamp(18px, 4vw, 20px);
+      font-size: clamp(18px, 4vw, 22px);
       font-weight: 400;
       color: #EBEBF5;
       opacity: 0.8;
       max-width: 600px;
-      margin: 0 auto 40px auto;
+      margin: 0 auto 48px auto;
       line-height: 1.5;
+      letter-spacing: -0.01em;
     }
 
     /* ── Download badges ── */
@@ -157,17 +162,17 @@
       display: block;
     }
 
-    /* ── Screenshots Grid ── */
+    /* ── Screenshots Grid (Carousel) ── */
     .showcase {
-      padding: 20px 0 60px;
+      padding: 0 0 80px 0;
       width: 100%;
     }
     
     .screenshot-grid {
       display: flex;
-      gap: 24px;
+      gap: 32px;
       overflow-x: auto;
-      padding: 24px 20px;
+      padding: 32px 5vw; /* Generous padding to allow peeking next card */
       /* Scroll snapping for better mobile experience */
       scroll-snap-type: x mandatory;
       -webkit-overflow-scrolling: touch;
@@ -180,48 +185,35 @@
       display: none;
     }
 
-    /* Spacer elements to ensure padding at start and end of scroll */
-    .screenshot-grid::before,
-    .screenshot-grid::after {
-      content: '';
-      flex: 0 0 10vw; /* Adds space at edges so cards peek */
-    }
-    
-    @media (min-width: 1024px) {
-      .screenshot-grid {
-        justify-content: center;
-        flex-wrap: wrap;
-        overflow-x: visible;
-      }
-      .screenshot-grid::before,
-      .screenshot-grid::after {
-        display: none;
-      }
-    }
-
     .screen-card-container {
       flex: 0 0 auto;
       scroll-snap-align: center;
       background-color: #1E1E20;
       border: 1px solid rgba(255, 255, 255, 0.05);
       border-radius: 32px;
-      padding: 12px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      padding: 16px;
+      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.5);
       transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .screen-card-container:hover {
       transform: translateY(-8px);
-      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 32px 64px rgba(0, 0, 0, 0.7);
       border-color: rgba(170, 255, 0, 0.2);
     }
 
     .screen-card {
-      height: 480px;
+      height: 540px;
       width: auto;
-      border-radius: 20px; /* Inner radius */
-      object-fit: cover;
+      border-radius: 16px;
+      /* Present straight-on, fully contained, NO cropping */
+      object-fit: contain; 
       display: block;
+      /* Ensure no accidental rotations */
+      transform: none; 
     }
 
     /* ── Footer ── */
@@ -245,7 +237,7 @@
       justify-content: center;
       width: 44px;
       height: 44px;
-      border-radius: 50%; /* Pill shape */
+      border-radius: 50px; /* Pill shape */
       background-color: #2C2C2E;
       color: #FFFFFF;
       text-decoration: none;
@@ -277,6 +269,7 @@
       opacity: 0.6;
       text-decoration: none;
       transition: opacity 0.2s ease, color 0.2s ease;
+      letter-spacing: -0.01em;
     }
 
     .footer-link:hover {
@@ -307,8 +300,9 @@
     }
 
     @media (max-width: 768px) {
-      .screen-card { height: 400px; }
-      .screen-card-container { padding: 10px; border-radius: 28px; }
+      .screen-card { height: 420px; }
+      .screen-card-container { padding: 12px; border-radius: 24px; }
+      .screenshot-grid { padding: 24px 8vw; gap: 24px; }
     }
   </style>
 </head>
