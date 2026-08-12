@@ -6,14 +6,15 @@
 
   <title>MeloGo — Vállalj melót a közeledben</title>
   <meta name="description" content="Az első magyar app ahol percek alatt találsz házkörüli melót vagy megbízható melóst a közeledben." />
-  <meta property="og:title" content="MeloGo" />
-  <meta property="og:description" content="Vállalj melót a közeledben. Töltsd le most!" />
-  <meta property="og:image" content="logo.jpg" />
-  <meta name="theme-color" content="#1C1C1E" />
+  <meta name="theme-color" content="#FAF8F3" />
 
+  <!-- Google Fonts for system-like sans serif -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
   <style>
     *, *::before, *::after {
@@ -25,20 +26,18 @@
     html, body {
       width: 100%;
       min-height: 100vh;
-      background-color: #1C1C1E;
-      color: #FFFFFF;
-      /* Only clean, modern, evenly weighted sans-serif fonts */
+      background-color: #FAF8F3;
+      color: #1C1C1E;
       font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'SF Pro Text', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       display: flex;
       flex-direction: column;
-      overflow-x: hidden;
+      line-height: 1.6;
     }
 
-    /* ── Layout ── */
     .container {
-      max-width: 1200px;
+      max-width: 720px; /* Kept narrow for focus and readability */
       margin: 0 auto;
       padding: 0 24px;
       width: 100%;
@@ -48,100 +47,91 @@
       flex: 1;
       display: flex;
       flex-direction: column;
-      padding: 40px 0;
-    }
-
-    /* ── Nav bar ── */
-    .navbar {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 72px;
-    }
-
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-    }
-
-    .nav-logo img {
-      width: 40px;
-      height: 40px;
-      border-radius: 12px;
-    }
-
-    .nav-logo-text {
-      font-size: 20px;
-      font-weight: 700;
-      color: #FFFFFF;
-      letter-spacing: -0.5px;
+      padding: 64px 0 80px;
     }
 
     /* ── Hero ── */
     .hero {
       text-align: center;
-      margin-bottom: 72px;
+      margin-bottom: 64px;
     }
 
-    .badge {
+    .nav-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      margin-bottom: 40px;
+    }
+
+    .nav-logo-icon {
+      width: 32px;
+      height: 32px;
+      background-color: #1C1C1E;
+      color: #6B9B37;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: -0.5px;
+    }
+
+    .nav-logo-text {
+      font-size: 18px;
+      font-weight: 600;
+      color: #1C1C1E;
+      letter-spacing: -0.3px;
+    }
+
+    .status-badge {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background-color: rgba(170, 255, 0, 0.1);
-      border: 1px solid rgba(170, 255, 0, 0.2);
-      color: #AAFF00;
-      font-size: 13px;
+      background-color: #EEF3E2;
+      color: #6B9B37;
+      font-size: 11px;
       font-weight: 600;
-      padding: 6px 16px;
-      border-radius: 100px; /* Capsule */
-      margin-bottom: 32px;
-      letter-spacing: 0.2px;
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin-left: 8px;
+      letter-spacing: 0.3px;
       text-transform: uppercase;
     }
 
-    .badge-dot {
+    .status-dot {
       width: 6px;
       height: 6px;
       border-radius: 50%;
-      background-color: #AAFF00;
-      box-shadow: 0 0 8px #AAFF00;
+      background-color: #6B9B37;
     }
 
     .hero-title {
-      font-size: clamp(44px, 8vw, 72px);
-      font-weight: 700;
-      /* Tight letter spacing for premium structured look */
+      font-size: clamp(36px, 6vw, 48px);
+      font-weight: 600;
       letter-spacing: -0.04em;
-      line-height: 1.05;
+      line-height: 1.2;
       margin-bottom: 24px;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-      color: #FFFFFF;
+      color: #1C1C1E;
     }
 
     .hero-title span {
-      color: #AAFF00;
+      color: #6B9B37;
     }
 
     .hero-subtitle {
-      font-size: clamp(18px, 4vw, 22px);
-      font-weight: 500;
-      color: #EBEBF5;
-      opacity: 0.8;
-      max-width: 600px;
-      margin: 0 auto 48px auto;
-      line-height: 1.5;
-      letter-spacing: -0.01em;
+      font-size: 16px;
+      font-weight: 400;
+      color: #8A887F;
+      max-width: 440px;
+      margin: 0 auto 40px auto;
+      line-height: 1.6;
     }
 
-    /* ── Download badges ── */
     .download-row {
       display: flex;
       gap: 16px;
-      flex-wrap: wrap;
       justify-content: center;
       align-items: center;
     }
@@ -152,76 +142,113 @@
     }
 
     .badge-link:hover {
-      transform: translateY(-3px);
+      transform: translateY(-2px);
       opacity: 0.9;
     }
 
-    .badge-link img, .badge-link svg {
-      height: 54px;
-      width: auto;
-      display: block;
-    }
-
-    /* ── Screenshots Grid (Carousel) ── */
-    .showcase {
-      padding: 0 0 80px 0;
-      width: 100%;
-    }
-    
-    .screenshot-grid {
+    /* ── Categories ── */
+    .categories {
       display: flex;
-      gap: 32px;
-      overflow-x: auto;
-      padding: 32px 5vw; /* Generous padding to allow peeking next card */
-      /* Scroll snapping for better mobile experience */
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      /* Hide scrollbar */
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-    }
-    
-    .screenshot-grid::-webkit-scrollbar {
-      display: none;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 64px;
     }
 
-    .screen-card-container {
-      flex: 0 0 auto;
-      scroll-snap-align: center;
-      background-color: #1E1E20;
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      border-radius: 32px;
-      padding: 16px;
-      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.5);
-      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    .category-card {
+      background-color: #FFFFFF;
+      border-radius: 16px;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    .cat-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
+      font-size: 24px;
+      flex-shrink: 0;
     }
 
-    .screen-card-container:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 32px 64px rgba(0, 0, 0, 0.7);
-      border-color: rgba(170, 255, 0, 0.2);
+    .cat-info {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
     }
 
-    .screen-card {
-      height: 540px;
-      width: auto;
+    .cat-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: #1C1C1E;
+    }
+
+    .cat-desc {
+      font-size: 13px;
+      color: #8A887F;
+      margin: 0;
+    }
+
+    /* Colors for categories */
+    .c-green { background-color: #EEF3E2; color: #6B9B37; }
+    .c-blue { background-color: #E9F1F8; color: #4A80AD; }
+    .c-peach { background-color: #FBEEE4; color: #C77D3F; }
+
+    /* ── Testimonials ── */
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 64px;
+    }
+
+    .testi-card {
+      background-color: #FFFFFF;
       border-radius: 16px;
-      /* Present straight-on, fully contained, NO cropping */
-      object-fit: contain; 
-      display: block;
-      /* Ensure no accidental rotations */
-      transform: none; 
+      padding: 24px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .quote {
+      font-size: 13px;
+      color: #8A887F;
+      font-style: italic;
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .author {
+      font-size: 11px;
+      color: #8A887F;
+      opacity: 0.7;
     }
 
     /* ── Footer ── */
     .footer {
-      background-color: #1C1C1E;
-      border-top: 1px solid rgba(255,255,255,0.05);
-      padding: 40px 0;
+      background-color: #FFFFFF;
+      border-top: 1px solid rgba(0,0,0,0.05);
+      padding: 60px 0;
       text-align: center;
+      margin-top: auto;
     }
 
     .socials {
@@ -237,16 +264,16 @@
       justify-content: center;
       width: 44px;
       height: 44px;
-      border-radius: 50px; /* Pill shape */
-      background-color: #2C2C2E;
-      color: #FFFFFF;
+      border-radius: 50%;
+      background-color: #FAF8F3;
+      color: #1C1C1E;
       text-decoration: none;
       transition: all 0.2s ease;
     }
 
     .social-link:hover {
-      background-color: #AAFF00;
-      color: #000000;
+      background-color: #EEF3E2;
+      color: #6B9B37;
       transform: scale(1.05);
     }
 
@@ -265,44 +292,33 @@
 
     .footer-link {
       font-size: 14px;
-      color: #EBEBF5;
-      opacity: 0.6;
+      color: #8A887F;
       text-decoration: none;
-      transition: opacity 0.2s ease, color 0.2s ease;
-      letter-spacing: -0.01em;
+      transition: color 0.2s ease;
     }
 
     .footer-link:hover {
-      opacity: 1;
-      color: #AAFF00;
+      color: #1C1C1E;
     }
 
     .copyright {
       font-size: 13px;
-      color: #EBEBF5;
-      opacity: 0.4;
+      color: #8A887F;
+      opacity: 0.7;
     }
 
-    /* Animations */
-    .fade-up {
-      opacity: 0;
-      animation: fade-up-anim 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    }
-    
-    .d-1 { animation-delay: 0.1s; }
-    .d-2 { animation-delay: 0.2s; }
-    .d-3 { animation-delay: 0.3s; }
-    .d-4 { animation-delay: 0.4s; }
-
-    @keyframes fade-up-anim {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (max-width: 768px) {
-      .screen-card { height: 420px; }
-      .screen-card-container { padding: 12px; border-radius: 24px; }
-      .screenshot-grid { padding: 24px 8vw; gap: 24px; }
+    @media (max-width: 640px) {
+      .hero-title {
+        font-size: 32px;
+      }
+      .nav-logo {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .status-badge {
+        margin-left: 0;
+        margin-top: 8px;
+      }
     }
   </style>
 </head>
@@ -310,35 +326,31 @@
 
   <main class="page-wrapper container">
 
-    <!-- Nav -->
-    <nav class="navbar fade-up d-1">
-      <a href="/" class="nav-logo">
-        <img src="logo.jpg" alt="MeloGo" />
-        <span class="nav-logo-text">MeloGo</span>
-      </a>
-    </nav>
-
     <!-- Hero -->
     <section class="hero">
-      <div class="badge fade-up d-1">
-        <span class="badge-dot"></span>
-        Már elérhető iOS &amp; Android
+      <div class="nav-logo">
+        <div class="nav-logo-icon">Go</div>
+        <span class="nav-logo-text">MeloGo</span>
+        <div class="status-badge">
+          <span class="status-dot"></span>
+          Már elérhető iOS &amp; Android
+        </div>
       </div>
 
-      <h1 class="hero-title fade-up d-2">
-        Vállalj melót<br><span>a közeledben.</span>
+      <h1 class="hero-title">
+        Vállalj melót,<br><span>segíts a szomszédodon.</span>
       </h1>
 
-      <p class="hero-subtitle fade-up d-3">
-        Az első magyar app ahol percek alatt találsz házkörüli melót — vagy megbízható melóst a közeledben.
+      <p class="hero-subtitle">
+        Az első magyar app, ahol percek alatt találsz megbízható segítséget otthonra — vagy szerzel egy kis plusz bevételt a szabadidődben.
       </p>
 
       <!-- Download badges -->
-      <div class="download-row fade-up d-4">
+      <div class="download-row">
         <!-- Official Apple App Store badge -->
         <a href="https://apps.apple.com/hu/app/melogo/id6783248800" target="_blank" rel="noopener noreferrer" class="badge-link" aria-label="Letöltés az App Store-ból">
-          <svg xmlns="http://www.w3.org/2000/svg" width="162" height="54" viewBox="0 0 162 54" aria-label="Download on the App Store">
-            <rect width="162" height="54" rx="10" fill="#000"/>
+          <svg xmlns="http://www.w3.org/2000/svg" width="150" height="50" viewBox="0 0 162 54" aria-label="Download on the App Store">
+            <rect width="162" height="54" rx="10" fill="#1C1C1E"/>
             <path d="M30.1 27.1c0-4.3 3.5-6.4 3.7-6.5-2-3-5.1-3.4-6.2-3.4-2.6-.3-5.2 1.6-6.5 1.6-1.4 0-3.4-1.5-5.6-1.5-2.9 0-5.5 1.7-7 4.3-3 5.2-.8 12.9 2.2 17.1 1.4 2.1 3.1 4.4 5.3 4.3 2.2-.1 3-1.4 5.6-1.4 2.6 0 3.3 1.4 5.6 1.4 2.3 0 3.8-2.1 5.2-4.2 1.6-2.4 2.3-4.7 2.3-4.8-.1-.1-4.6-1.7-4.6-6.9zm-4.3-12.7c1.2-1.4 2-3.4 1.8-5.4-1.7.1-3.8 1.2-5 2.6-1.1 1.3-2.1 3.3-1.8 5.3 1.9.1 3.8-1 5-2.5z" fill="#fff"/>
             <text x="48" y="22" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="rgba(255,255,255,0.8)" letter-spacing="0.2">Download on the</text>
             <text x="47" y="39" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="20" font-weight="600" fill="#fff" letter-spacing="-0.3">App Store</text>
@@ -346,33 +358,64 @@
         </a>
         <!-- Official Google Play badge -->
         <a href="https://play.google.com/store/apps/details?id=com.melogo.app&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" class="badge-link" aria-label="Letöltés Google Play-ről">
-          <svg xmlns="http://www.w3.org/2000/svg" width="162" height="54" viewBox="0 0 162 54" aria-label="Szerezd be a Google Play-en">
-            <rect width="160" height="52" x="1" y="1" rx="9" fill="#000" stroke="#878787" stroke-width="1"/>
+          <svg xmlns="http://www.w3.org/2000/svg" width="150" height="50" viewBox="0 0 162 54" aria-label="Szerezd be a Google Play-en">
+            <rect width="162" height="54" rx="10" fill="#1C1C1E" />
             <path d="M22.8 15.3c-.3.3-.5.9-.5 1.7v19.9c0 .8.2 1.4.5 1.7l.1.1 11.2-11.2v-.2l-11.2-11.2-.1-.1z" fill="#00a6ff"/>
             <path d="M37.8 30.3l-3.7-3.7v-.2l3.7-3.7 1.2.7 3.5 2c1 .6 1 1.5 0 2l-3.5 2-1.2.7z" fill="#ffc100"/>
             <path d="M34.1 26.4l-11.3 11.3c.4.4 1 .4 1.7 0l13.1-7.5-3.5-3.8z" fill="#ff3333"/>
             <path d="M34.1 26.6l3.5-3.8-13.1-7.5c-.7-.4-1.3-.3-1.7 0l11.3 11.3z" fill="#00e676"/>
             <text x="54" y="22" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="10.5" fill="rgba(255,255,255,0.8)" letter-spacing="0.2">SZEREZD BE:</text>
-            <text x="53" y="39" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="19" font-weight="500" fill="#fff" letter-spacing="-0.3">Google Play</text>
+            <text x="53" y="39" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="19" font-weight="600" fill="#fff" letter-spacing="-0.3">Google Play</text>
           </svg>
         </a>
       </div>
     </section>
 
-  </main>
+    <!-- Categories -->
+    <section class="categories">
+      <div class="category-card">
+        <div class="cat-icon c-green"><i class="ph-fill ph-leaf"></i></div>
+        <div class="cat-info">
+          <h3 class="cat-title">Kertészet</h3>
+          <p class="cat-desc">Fűnyírás, gyomlálás, kerítésfestés</p>
+        </div>
+      </div>
+      <div class="category-card">
+        <div class="cat-icon c-blue"><i class="ph-fill ph-house"></i></div>
+        <div class="cat-info">
+          <h3 class="cat-title">Takarítás</h3>
+          <p class="cat-desc">Nagytakarítás, ablaktisztítás, rendrakás</p>
+        </div>
+      </div>
+      <div class="category-card">
+        <div class="cat-icon c-peach"><i class="ph-fill ph-user"></i></div>
+        <div class="cat-info">
+          <h3 class="cat-title">Gyerekfelügyelet</h3>
+          <p class="cat-desc">Megbízható, értékelt bébiszitterek</p>
+        </div>
+      </div>
+    </section>
 
-  <!-- Screenshots -->
-  <section class="showcase">
-    <div class="screenshot-grid fade-up d-4">
-      <div class="screen-card-container"><img src="assets/screenshot1.png" alt="App Screen 1" class="screen-card" loading="lazy" /></div>
-      <div class="screen-card-container"><img src="assets/screenshot2.png" alt="App Screen 2" class="screen-card" loading="lazy" /></div>
-      <div class="screen-card-container"><img src="assets/screenshot3.png" alt="App Screen 3" class="screen-card" loading="lazy" /></div>
-      <div class="screen-card-container"><img src="assets/screenshot4.png" alt="App Screen 4" class="screen-card" loading="lazy" /></div>
-      <div class="screen-card-container"><img src="assets/screenshot5.png" alt="App Screen 5" class="screen-card" loading="lazy" /></div>
-      <div class="screen-card-container"><img src="assets/screenshot6.png" alt="App Screen 6" class="screen-card" loading="lazy" /></div>
-      <div class="screen-card-container"><img src="assets/screenshot7.png" alt="App Screen 7" class="screen-card" loading="lazy" /></div>
-    </div>
-  </section>
+    <!-- Testimonials -->
+    <section class="testimonials">
+      <div class="testi-card">
+        <div class="avatar c-green">NL</div>
+        <p class="quote">"Két nap alatt találtam valakit, aki rendbe tette a kertet."</p>
+        <span class="author">Németh Lajos · Kaposvár</span>
+      </div>
+      <div class="testi-card">
+        <div class="avatar c-blue">KV</div>
+        <p class="quote">"Egyszerű volt feladni a munkát, és még aznap jelentkezett valaki."</p>
+        <span class="author">Kovács Vera · Kaposvár</span>
+      </div>
+      <div class="testi-card">
+        <div class="avatar c-peach">SP</div>
+        <p class="quote">"Megbízható bébiszittert kaptam, ráadásul a szomszédomból."</p>
+        <span class="author">Szabó Péter · Kaposvár</span>
+      </div>
+    </section>
+
+  </main>
 
   <!-- Footer -->
   <footer class="footer">
